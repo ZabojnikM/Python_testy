@@ -1,0 +1,1 @@
+print ("výledek je",4*4)
