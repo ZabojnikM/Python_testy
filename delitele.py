@@ -11,14 +11,21 @@ while True:
         else:
             print(cislo + " není správné číslo !")
 
-    print("Delitelé čísla " + str(cislo) + " jsou :",end =" ")
+    výsledek = "\nDelitelé čísla " + str(cislo) + " jsou : "
 
     cislo = int(cislo)
+    procenta = int(cislo)
+    aktproc = 1
     for x in range(cislo + 1,1,-1):
+        if(x < procenta):
+            print("\rProceno prohledaných čísel : ",aktproc,"%",end =" ")
+            aktproc += 1
+            procenta = procenta - cislo/100
         if(cislo % x == 0):
-            print(str(x),end = " ")
+            výsledek += str(x) + " "
 
-    ano = input("\nChceš zadat další číslo ? A/N ")
+    print(výsledek)
+    ano = input("Chceš zadat další číslo ? A/N ")
     if (ano != "a" and ano != "A"):
        break
     
